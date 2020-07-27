@@ -1,0 +1,32 @@
+<form #form="ngForm" (submit)="onSubmit(form)" >
+  <div class="formgroup">
+    <label>First Name</label>
+    <input name="FirstName" #FirstName="ngModel" [(ngModel)]="service.formData.firstName" class="form-control" placeholder="First Name" required pattern="[0-9A-Za-zÀ-ÿ,._\-\^\x27\s]{1,50}" title="First Name Required">
+    <div class="validation-error" *ngIf="FirstName.invalid && FirstName.touched">First Name Required.</div>
+  </div>
+  <div class="formgroup">
+    <label>Last Name</label>
+    <input name="LastName" #LastName="ngModel" [(ngModel)]="service.formData.lastName" class="form-control" placeholder="Last Name" required pattern="[0-9A-Za-zÀ-ÿ,._\-\^\x27\s]{1,50}" title="Last Name Required">
+    <div class="validation-error" *ngIf="LastName.invalid && LastName.touched">Last Name Required.</div>
+  </div>
+  <div class="formgroup">
+    <label>Email</label>
+    <input type="email" name="EmailID" #EmailID="ngModel" [(ngModel)]="service.formData.emailID" class="form-control" placeholder="staff1@organizationemail.com" ngModel [email]="true"  title="Invalid Format" required>
+    <div class="validation-error" *ngIf="EmailID.invalid && EmailID.touched">Valid Email Required.</div>
+  </div>
+  <div class="formgroup">
+    <label>Activities</label>
+    <input name="Activities" #Activities="ngModel" [(ngModel)]="service.formData.activities" class="form-control">
+  </div>
+
+  <div class="formgroup">
+    <label>Comments</label>
+    <input name="Comments" #Comments="ngModel" [(ngModel)]="service.formData.comments" class="form-control">
+  </div>
+
+  <div class="formgroup">
+    <button type="submit" class="btn btn-lg btn-block">SUBMIT</button>
+  </div>
+
+</form>
+

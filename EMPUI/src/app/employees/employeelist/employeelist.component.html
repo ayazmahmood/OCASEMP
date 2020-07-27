@@ -1,0 +1,13 @@
+<table class="table table-hover">
+
+  <tr *ngFor="let emp of service.list">
+    <td>
+      <b>Name:</b> {{emp.firstName}} {{emp.lastName}},
+      <b>Email:</b>{{emp.emailID}}<br>
+      <b>Activities:</b>{{emp.activities}}<br>
+      <b>Comments:</b>{{emp.comments}}
+    </td>
+  </tr>
+
+
+</table>
